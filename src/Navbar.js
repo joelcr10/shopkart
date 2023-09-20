@@ -42,8 +42,8 @@ const Navbar = () => {
                     </div>
                 </nav> 
                 <div className="star-line">
+                    <img src={star} alt="" id='navbar-star'/>
                     <hr />
-                    {/* <img src={star} alt="" /> */}
                 </div>
                 <div className="nav-links">
                     {navbar.map((nav)=>(
