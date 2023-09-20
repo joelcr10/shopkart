@@ -1,6 +1,7 @@
 import star from './assets/images/Star 3.png';
 import model from './assets/images/jessica-radanavong-IchPBHFD0pw-unsplash.png';
 import star2 from './assets/images/Star 4.png';
+import arrow from './assets/images/arrow.png';
 const Home = () => {
     return ( 
         <div className="home">
@@ -18,7 +19,7 @@ const Home = () => {
             </div>
             <hr className='home-line'/>
             <img src={star2} alt="" className='home-line-star' />
-            
+            <label className='see-more'>See more <img src={arrow} alt="" /> </label>
         </div>
      );
 }
