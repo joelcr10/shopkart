@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/shopkart/static/css/main.962a3688.css",
+    "main.js": "/shopkart/static/js/main.35ba2d46.js",
+    "static/js/787.b12a91a2.chunk.js": "/shopkart/static/js/787.b12a91a2.chunk.js",
+    "static/media/background.png": "/shopkart/static/media/background.98e24fbb4a2b7b97dddd.png",
+    "static/media/jessica-radanavong-IchPBHFD0pw-unsplash.png": "/shopkart/static/media/jessica-radanavong-IchPBHFD0pw-unsplash.ac376bf347c13eac39db.png",
+    "static/media/footer.png": "/shopkart/static/media/footer.fafad6b8edcf3657b3d5.png",
+    "static/media/jacket2.png": "/shopkart/static/media/jacket2.c67e7b77021c463f4be8.png",
+    "static/media/jacket3.png": "/shopkart/static/media/jacket3.92202e9b89e85e839d5a.png",
+    "static/media/jacket1.png": "/shopkart/static/media/jacket1.8a0bd3834767f043acfb.png",
+    "static/media/Star 3.png": "/shopkart/static/media/Star 3.3c40e0f0700b22c765b2.png",
+    "static/media/jacket4.png": "/shopkart/static/media/jacket4.9936d6dd132c68d0be66.png",
+    "index.html": "/shopkart/index.html",
+    "main.962a3688.css.map": "/shopkart/static/css/main.962a3688.css.map",
+    "main.35ba2d46.js.map": "/shopkart/static/js/main.35ba2d46.js.map",
+    "787.b12a91a2.chunk.js.map": "/shopkart/static/js/787.b12a91a2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.962a3688.css",
+    "static/js/main.35ba2d46.js"
+  ]
+}
