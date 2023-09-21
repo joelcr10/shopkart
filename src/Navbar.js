@@ -6,7 +6,7 @@ import cross from './assets/images/cross.png';
 
 const Navbar = () => {
     const [dropdown, setDropdown] = useState(false);
-    const [isNavExpanded, setIsNavExpanded] = useState(false)
+    const [isNavExpanded, setIsNavExpanded] = useState(false) //state to toggle between navbar in mobile version
 
 
     const navbar = [
@@ -22,17 +22,25 @@ const Navbar = () => {
         ];
     
         console.log('nav:',navbar);
-    const onMouseEnter = (name,nav) => {
+
+        const onMouseEnter = (name,nav) => {
         
         if(name==="Our Products"){
-            console.log('name:',nav);
+            console.log('name:',nav,navbar);
             setDropdown(true)
         }     
     }
     
     const onMouseLeave = (name) => {
         setDropdown(false)
-        console.log('left:',name,dropdown);
+        // console.log('left:',name,dropdown);
+    }
+
+    const dropdownMouseEnter = () =>{
+        setDropdown(true);
+    }
+    const dropdownMouseLeave = () =>{
+        setDropdown(false);
     }
     return (
         <div>
@@ -57,12 +65,20 @@ const Navbar = () => {
                     {navbar.map((nav)=>(
                         <a onMouseEnter={()=>onMouseEnter(nav.name,nav.child)} onMouseLeave={()=>onMouseLeave(nav.name)} key={nav.name}>
                             {nav.name.toUpperCase()} 
-                            {dropdown && <div>
-                                    <Dropdown List = {nav.child}/>
-                                    {/* {nav.name.map(items)=>{}} */}
-                                </div>}
+                            
                         </a>
+        
                     ))}
+                    <div className={dropdown?"dropdown-visible":"dropdown-hidden"} onMouseEnter={()=>dropdownMouseEnter} onMouseLeave={()=>dropdownMouseLeave}>
+                        {/* <Dropdown list = {nav.child}/> */}
+                        <a id='dropdown-product'>OUR PRODUCTS</a>
+                        <hr />
+                        <div className="dropdown-category">
+                            {navbar[2].child.map((cat)=>(
+                                <a>{cat.name.toUpperCase()}</a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
