@@ -6,7 +6,17 @@ import jacket4 from './assets/images/jacket4.png';
 import arrowbox from './assets/images/arrowBox.png';
 import arrow1 from './assets/images/Arrow 2.png';
 import arrow2 from './assets/images/Arrow 1.png';
+import AxiosFetch from './AxiosFetch';
 const Product = () => {
+    const {data,isPending,error} = AxiosFetch("https://fakestoreapi.com/products");
+    const productScroll = () =>{
+        var item = document.getElementById("product-shop");
+
+        window.addEventListener("wheel", function (e) {
+            if (e.deltaY > 0) item.scrollLeft += 100;
+            else item.scrollLeft -= 100;
+        });
+    }
     return ( 
         <div className="product">
             <div className="title-container">
@@ -23,14 +33,14 @@ const Product = () => {
                     <p>Best Sellers</p>
                     <p>50% off</p>
             </div>
-            <div className="product-shop">
+            <div className="product-shop" id='product-shop' onMouseEnter={()=>productScroll}>
                
-                <div className="item-container">
+                {/* <div className="item-container">
                     <div className="item-image-container">
                         <img src={jacket1} alt="" className='item-image'/>
                         <img src={arrowbox} alt="" className='arrow-box'/>
                     </div>
-                    <h1 className='item-name'>FLORIDA JACKET</h1>
+                    <h1 className='item-name'></h1>
                     <p>Suffered alteration in some form ybsuffalteration in some forms, byinjected humor, or randomized</p>
                     <h3>$100</h3>
                 </div>
@@ -63,8 +73,25 @@ const Product = () => {
                     <h1 className='item-name'>FLORIDA JACKET</h1>
                     <p>Suffered alteration in some form ybsuffalteration in some forms, byinjected humor, or randomized</p>
                     <h3>$100</h3>
-                </div>
+                </div> */}
+
+                {error && <div>{error}</div>}
+                {isPending && <div className="loading"></div>} 
+                {data && data.map((item)=>(
+                    <div className="item-container" key={item.id}>
+                        <div className="item-image-container">
+                            <img src={item.image} alt="" className='item-image'/>
+                            <img src={arrowbox} alt="" className='arrow-box'/>
+                        </div>
+                        <h1 className='item-name'>{item.title}</h1>
+                        <p>{item.description}</p>
+                        <h3>{"$"+item.price}</h3>
+                    </div>
+                ))}
             </div>
+
+
+
            </div>
 
         </div>

@@ -26,7 +26,7 @@ const Navbar = () => {
         const onMouseEnter = (name,nav) => {
         
         if(name==="Our Products"){
-            console.log('name:',nav,navbar);
+            console.log('name:',nav);
             setDropdown(true)
         }     
     }
