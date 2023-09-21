@@ -1,9 +1,12 @@
 import Dropdown from './Dropdown';
 import star from './assets/images/Star 1.png';
 import { useState } from 'react';
+import ham from './assets/images/hamburger menu.png';
+import cross from './assets/images/cross.png';
 
 const Navbar = () => {
     const [dropdown, setDropdown] = useState(false);
+    const [isNavExpanded, setIsNavExpanded] = useState(false)
 
 
     const navbar = [
@@ -35,17 +38,22 @@ const Navbar = () => {
         <div>
             <div className="navbar-container">
                 <nav className="navbar">
-                <label className="logo">ShopKart</label>
-                <div className="order-container">
-                    <label> WHISHLIST(0)</label>
-                    <label htmlFor="">BAG(0)</label>
+                    <label className="logo">ShopKart</label>
+                    <div className="order-container">
+                        <label> WHISHLIST(0)</label>
+                        <label htmlFor="">BAG(0)</label>
+                    </div>
+                    <div className="hamburger-menu" onClick={()=> setIsNavExpanded(!isNavExpanded)}>
+                        {isNavExpanded && <img src={cross} alt="" className='menu-icon' />}
+                        {!isNavExpanded && <img src={ham} alt="" className='menu-icon' />}
+                        
                     </div>
                 </nav> 
                 <div className="star-line">
                     <img src={star} alt="" id='navbar-star'/>
                     <hr />
                 </div>
-                <div className="nav-links">
+                <div className={isNavExpanded? "nav-links-expanded":"nav-links"}>
                     {navbar.map((nav)=>(
                         <a onMouseEnter={()=>onMouseEnter(nav.name,nav.child)} onMouseLeave={()=>onMouseLeave(nav.name)} key={nav.name}>
                             {nav.name.toUpperCase()} 

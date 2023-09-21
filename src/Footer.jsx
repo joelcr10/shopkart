@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
             <div className="lower-footer">
                 <h1>GET</h1>
-                <h1>IN TOUCH</h1>
+                <h1>IN <span id="touch">TOUCH</span></h1>
             </div>
             <div className="copyright">
                 <span>Copyright 2022 All Right Reserved By SG</span>
