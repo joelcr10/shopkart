@@ -12,8 +12,8 @@ const Footer = () => {
                 </div>
                 <div className="right-text">
                     <form action="" className="form">
-                        <input type="text" className="text" placeholder="NAME" />
-                        <input type="text" className="text" placeholder="EMAIL"/>
+                        <input type="text" className="text" placeholder="NAME" required/>
+                        <input type="email" className="text" placeholder="EMAIL"/>
                         <input type="text" className="text" placeholder="MESSAGE"/>
                         <input type="submit" className="submit" id="submit-btn" value={"SEND"}/>
 

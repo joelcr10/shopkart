@@ -18,7 +18,7 @@ const Header = () => {
             <div className="header-right">
                 <div className='text-container'>
                     <label>Login</label>
-                    <label>Follow US</label>
+                    <label id='follow'>Follow US</label>
                 </div>
                 <div className="social">
                     <img src={v4} alt="" />
