@@ -12,6 +12,7 @@ html{
   background-image: url("./assets/images/background.png");
   background-size: contain;
   background-repeat: repeat;
+  overflow-x: hidden;
 }
 
 body{
@@ -54,7 +55,7 @@ body{
 
 .header .header-left{
   display: flex;
-  margin-left: 75px;
+  margin-left: 56px;
   align-items: center;
 }
 
@@ -72,6 +73,11 @@ body{
   line-height: 18px;
   font-weight: 400;
   color: #626262;
+  margin-left: 10px;
+}
+
+.header .header-left #return{
+  margin-left: 20px;
 }
 
 .header-left .delivery-container{
@@ -140,12 +146,17 @@ body{
     
   }
 
+  .header .header-left #return{
+    margin-left: 10px;
+  }
+
   .header-left .delivery-container{
-    width: 100px;
+    width: 105px;
     
   }
   .header-left .delivery-container label{
     font-size: 10px;
+    
     /* background-color: antiquewhite; */
   }
 
@@ -390,18 +401,19 @@ body{
     z-index: 10;
     height: calc(100vh - 300px);
     /* height: 100vh; */
-    top: 14%;
+    top: 15%;
     left: 0;
     overflow: hidden;
-    
     gap: 2rem;
     background-color: rgb(24, 24, 24);
     background-image: url("./assets/images/background.png");
-    background-size: 700%;
+    background-size: contain;
+    background-repeat: repeat;
     padding-top: 100px;
     transition: all 1s ease-in;
     animation-name: menu;
     animation: menu 0.3s ease-out;
+    text-align: center;
     
   }
 
@@ -453,6 +465,7 @@ body{
   width: 100%;
   height: 661px;
   isolation: isolate;
+  /* overflow-x: hidden; */
 
 }
 
@@ -632,6 +645,7 @@ body{
   color: rgb(0, 0, 0);
   padding-top: 20px;
   position: relative;
+  overflow-x: hidden;
 }
 
 .product .title-container{
@@ -853,6 +867,7 @@ body{
   background-color: #626262;
   position: relative;
   background: url("./assets/images/footer.png");
+  overflow-x: hidden;
 }
 .upper-footer{
   padding-top: 60px;

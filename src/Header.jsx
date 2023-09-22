@@ -13,7 +13,7 @@ const Header = () => {
                     <img src={truck} alt="" />
                     <label>Free Delivery</label>
                 </div>
-                <label>Return Policy</label>
+                <label id='return'>Return Policy</label>
             </div>
             <div className="header-right">
                 <div className='text-container'>
@@ -24,8 +24,7 @@ const Header = () => {
                     <img src={v4} alt="" />
                     <img src={v1} alt="" />
                     <img src={v2} alt="" />
-                    <img src={v3} alt="" />
-                    
+                    <img src={v3} alt="" /> 
                 </div>
 
             </div>

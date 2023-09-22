@@ -1,11 +1,11 @@
-import Dropdown from './Dropdown';
+
 import star from './assets/images/Star 1.png';
 import { useState } from 'react';
 import ham from './assets/images/hamburger menu.png';
 import cross from './assets/images/cross.png';
 
 const Navbar = () => {
-    const [dropdown, setDropdown] = useState(false);
+    const [dropdown, setDropdown] = useState(false);  //state to toggle between drop down box when mouse hovers over "our products"
     const [isNavExpanded, setIsNavExpanded] = useState(false) //state to toggle between navbar in mobile version
 
 
@@ -21,19 +21,14 @@ const Navbar = () => {
         { name: 'Contact Us', id: 'contact'},
         ];
     
-        console.log('nav:',navbar);
-
-        const onMouseEnter = (name,nav) => {
-        
+    const onMouseEnter = (name) => {
         if(name==="Our Products"){
-            console.log('name:',nav);
             setDropdown(true)
         }     
     }
     
     const onMouseLeave = (name) => {
         setDropdown(false)
-        // console.log('left:',name,dropdown);
     }
 
     const dropdownMouseEnter = () =>{
@@ -42,6 +37,7 @@ const Navbar = () => {
     const dropdownMouseLeave = () =>{
         setDropdown(false);
     }
+
     return (
         <div>
             <div className="navbar-container">
@@ -63,14 +59,12 @@ const Navbar = () => {
                 </div>
                 <div className={isNavExpanded? "nav-links-expanded":"nav-links"}>
                     {navbar.map((nav)=>(
-                        <a onMouseEnter={()=>onMouseEnter(nav.name,nav.child)} onMouseLeave={()=>onMouseLeave(nav.name)} key={nav.name}>
+                        <a onMouseEnter={()=>onMouseEnter(nav.name,)} onMouseLeave={()=>onMouseLeave(nav.name)} key={nav.name}>
                             {nav.name.toUpperCase()} 
                             
                         </a>
-        
                     ))}
-                    <div className={dropdown?"dropdown-visible":"dropdown-hidden"} onMouseEnter={()=>dropdownMouseEnter} onMouseLeave={()=>dropdownMouseLeave}>
-                        {/* <Dropdown list = {nav.child}/> */}
+                    {dropdown && <div className="dropdown-visible" onMouseEnter={()=>dropdownMouseEnter} onMouseLeave={()=>dropdownMouseLeave}>
                         <a id='dropdown-product'>OUR PRODUCTS</a>
                         <hr />
                         <div className="dropdown-category">
@@ -78,7 +72,8 @@ const Navbar = () => {
                                 <a>{cat.name.toUpperCase()}</a>
                             ))}
                         </div>
-                    </div>
+                    </div>}
+                    
                 </div>
             </div>
         </div>
